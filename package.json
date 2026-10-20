@@ -1,7 +1,7 @@
 {
   "name": "dsh-motionworks-iec-use",
-  "version": "0.5.7",
-  "description": "Workspace-bound MotionWorks IEC editing, versioned programming references, static review and IDE verification for AryaAI DSH.",
+  "version": "0.6.0",
+  "description": "Workspace-bound MotionWorks IEC editing, versioned programming references, static review and IDE verification for AryaAI DSH. The guidance skill and the Host tools load as separate bundle entries.",
   "keywords": [
     "dsh",
     "deepseek-harness",
@@ -16,10 +16,13 @@
   "license": "MIT",
   "type": "module",
   "exports": {
-    ".": "./index.js"
+    ".": "./index.js",
+    "./skill": "./skill.js"
   },
   "files": [
     "index.js",
+    "paths.js",
+    "skill.js",
     "direct-attach.js",
     "verification.js",
     "edit-session.js",

@@ -6,6 +6,12 @@ existing native edit-guide tool instead of guessed ASAR filesystem paths.
 
 ## Unreleased
 
+## 0.6.0 - 2026-10-19
+
+- Split the bundle into two loader entries that a profile can enable and disable separately: `motionworks-iec-use` (`index.js`, the 61 `mw_*` tools and the COM bridge) and `motionworks-iec-skill` (`skill.js`, the `motionworks-iec-use` guidance). Disabling the skill entry removes the guidance and its catalog line without taking the tools away, and disabling the tools entry removes about 14k tokens of tool schemas from every request while the guidance stays available.
+- `package.json` exports `./skill` and ships `skill.js` and `paths.js`; the loader resolves a plugin subpath by name, so `dsh-motionworks-iec-use/skill` is a valid entry.
+- Behaviour is unchanged when both entries are enabled: the same 61 tools and the same skill (body, description, `whenToUse`, `custom` source, Skills-page switch) reach the model.
+
 ## 0.5.7 - 2026-10-16
 
 - Register the skill as user-invoked. `disable-model-invocation: true` keeps it out of model-facing catalogs and loaders while `/motionworks-iec-use` still loads it, so the Skills page owns when the model may select this engineering skill on its own.

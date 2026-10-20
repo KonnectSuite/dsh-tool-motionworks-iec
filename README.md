@@ -90,6 +90,22 @@ connect the computer-use MCP separately, and confirm the `mw_ide_*` tools and
 `motionworks-iec-use` skill are available. This bundle does not automatically register
 a desktop-control server.
 
+## Two bundle entries: tools and guidance
+
+The bundle installs as two rows in the host's plugin list, and a profile can enable or
+disable either one:
+
+- `motionworks-iec-use` (`index.js`) registers the 61 `mw_*` tools and owns the COM
+  bridge. Disabling it removes those tool schemas from every request, which is where
+  most of this bundle's token cost sits.
+- `motionworks-iec-skill` (`skill.js`) registers the `motionworks-iec-use` guidance.
+  Disabling it removes the guidance and its line in the model's skill catalog while the
+  tools keep working.
+
+Enabling both gives the documented behaviour. Keeping only the guidance is the cheap
+way to ask a question about a project; keeping only the tools is for a workflow that
+does not want the skill text in context.
+
 ## First use: open IDE or a new test copy
 
 Keep the `.mwt` wrapper **and its matching expanded project directory** together

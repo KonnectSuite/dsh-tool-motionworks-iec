@@ -1,12 +1,20 @@
-# MotionWorks Use — the agent-facing half of the bundle.
+# MotionWorks Use — the bundle's loader entries.
 #
-# This row is what the profile's bundle list pulls in. It registers the mw_ide_*
-# tools on ctx.tools and owns the lifetime of the 32-bit COM bridge that talks to
-# the running MotionWorks IDE.
+# Two rows: the guidance skill and the Host tools. They are separate so a profile
+# can load either half alone — disable `motionworks-iec-use` to keep the
+# guidance without the 61 `mw_*` tools, or disable `motionworks-iec-skill` to keep
+# the tools without the guidance.
+#
+# The tools row registers the mw_ide_* tools on ctx.tools and owns the lifetime of
+# the 32-bit COM bridge that talks to the running MotionWorks IDE. It keeps the
+# entry id the single-entry bundle used, so an existing profile's enable/disable
+# choice still applies to it.
 #
 # There is deliberately NO config here: the plugin needs no settings, and its
 # staging root is derived from the calling session workspace rather than configured, so a
 # mistaken config value cannot point the tools at a real project tree.
 - insert:
+    - id: motionworks-iec-skill
+      name: 'dsh-motionworks-iec-use/skill'
     - id: motionworks-iec-use
       name: 'dsh-motionworks-iec-use'
