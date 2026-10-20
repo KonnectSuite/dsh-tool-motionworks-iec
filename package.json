@@ -17,9 +17,12 @@
   "type": "module",
   "exports": {
     ".": "./index.js",
-    "./skill": "./skill.js"
+    "./skill": "./skill.js",
+    "./locale/*.json": "./locale/*.json"
   },
   "files": [
+    "icon.svg",
+    "locale/*.json",
     "index.js",
     "paths.js",
     "skill.js",
@@ -165,5 +168,6 @@
   "bugs": {
     "url": "https://github.com/KonnectSuite/dsh-tool-motionworks-iec/issues"
   },
-  "homepage": "https://github.com/KonnectSuite/dsh-tool-motionworks-iec#readme"
+  "homepage": "https://github.com/KonnectSuite/dsh-tool-motionworks-iec#readme",
+  "icon": "./icon.svg"
 }
