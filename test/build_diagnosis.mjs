@@ -16,7 +16,7 @@
 import { existsSync, readFileSync, rmSync, statSync, writeFileSync, copyFileSync } from 'node:fs';
 
 const PLUGIN = process.env.MW_PLUGIN
-  ?? 'C:\\Users\\KNPhu\\profiles\\desktop\\node_modules\\dsh-motionworks-iec-use';
+  ?? 'C:\\Users\\KNPhu\\profiles\\desktop\\node_modules\\dsh-tool-motionworks-iec';
 const mod = await import(`file:///${PLUGIN.replace(/\\/g, '/')}/index.js`);
 const tools = new Map(mod.__internals.defineTools().map((t) => [t.name, t]));
 const run = (n, a = {}) => tools.get(n).execute(a, {});

@@ -26,7 +26,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-INST = Path(r"C:\Users\KNPhu\profiles\desktop\node_modules\dsh-motionworks-iec-use")
+INST = Path(r"C:\Users\KNPhu\profiles\desktop\node_modules\dsh-tool-motionworks-iec")
 NODE = Path(r"C:\Users\KNPhu\ProjectAryaAI\resources\aryaai\dsh-runtime\node\node.exe")
 SRC = Path(r"C:\Users\KNPhu\OneDrive\Desktop\Carpenter Foam\MP2600iec Program\TopCutter.mwt")
 STAGE = INST / "stage" / "TopCutter"
