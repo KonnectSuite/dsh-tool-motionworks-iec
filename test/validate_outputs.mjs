@@ -22,7 +22,7 @@ import { pathToFileURL } from 'node:url';
  * source plugin silently reads a different stage/ and reports "no POU named ..."
  * for a POU that plainly exists. Set MW_PLUGIN to compare like with like:
  *
- *   MW_PLUGIN=<profile>\node_modules\dsh-motionworks-iec-use node test/validate_outputs.mjs
+ *   MW_PLUGIN=<profile>\node_modules\dsh-tool-motionworks-iec node test/validate_outputs.mjs
  */
 const PLUGIN = process.env.MW_PLUGIN
   ?? 'C:\\Users\\KNPhu\\OneDrive\\Documents\\deepseek-harness\\default-workspace\\motionworks-iec-use';

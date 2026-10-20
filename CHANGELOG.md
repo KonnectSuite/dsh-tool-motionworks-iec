@@ -6,6 +6,12 @@ existing native edit-guide tool instead of guessed ASAR filesystem paths.
 
 ## Unreleased
 
+## 0.7.0 - 2026-10-19
+
+- Rename the package and repository to `dsh-tool-motionworks-iec` so the three engineering bundles share one `dsh-tool-<product>` naming shape, and the plugin module names now match their loader entry ids: `motionworks-iec-tools` (tools) and `motionworks-iec-skill` (guidance).
+- The skill is registered as `motionworks-iec`; its catalog entry and `/motionworks-iec` command replace `motionworks-iec-use`.
+- Upgrading resets per-entry enable state: the tools row's id changed from `motionworks-iec-use` to `motionworks-iec-tools`, so a profile that had disabled the old id re-enables the 61 tool schemas until the new row is disabled.
+
 ## 0.6.0 - 2026-10-19
 
 - Split the bundle into two loader entries that a profile can enable and disable separately: `motionworks-iec-use` (`index.js`, the 61 `mw_*` tools and the COM bridge) and `motionworks-iec-skill` (`skill.js`, the `motionworks-iec-use` guidance). Disabling the skill entry removes the guidance and its catalog line without taking the tools away, and disabling the tools entry removes about 14k tokens of tool schemas from every request while the guidance stays available.

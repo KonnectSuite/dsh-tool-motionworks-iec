@@ -47,7 +47,7 @@ check('the skill entry registers no tools', skill.registered.tools.length === 0,
   `${skill.registered.tools.length} registered`);
 
 const delivered = skill.registered.skills[0] ?? {};
-check('it is named motionworks-iec-use', delivered.name === 'motionworks-iec-use', String(delivered.name));
+check('it is named motionworks-iec', delivered.name === 'motionworks-iec', String(delivered.name));
 check('the body is loaded from SKILL.md, not empty',
   typeof delivered.content === 'string' && delivered.content.length > 5000,
   `${delivered.content?.length ?? 0} chars`);

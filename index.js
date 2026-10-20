@@ -83,7 +83,7 @@ const [
   'compiler-interface.js', 'project-checkpoint.js', 'direct-attach.js',
 ].map(file => import(pathToFileURL(join(HERE, file)).href)));
 
-export const name = 'motionworks-iec-use';
+export const name = 'motionworks-iec-tools';
 export const inject = ['tools'];
 
 const BRIDGE_DIR = join(HERE, 'bridge');
@@ -4186,7 +4186,7 @@ export function apply(ctx) {
   if (process.platform !== 'win32') {
     try {
       ctx.logger?.info?.(
-        'motionworks-iec-use: not loaded. This plugin drives the MotionWorks IEC 3 Pro IDE, which '
+        'motionworks-iec-tools: not loaded. This plugin drives the MotionWorks IEC 3 Pro IDE, which '
         + `is a Windows application, and this host is ${process.platform}. No tools or skill are `
         + 'registered.',
       );

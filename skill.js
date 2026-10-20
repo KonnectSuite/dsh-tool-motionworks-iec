@@ -12,7 +12,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { HERE } from './paths.js';
 
-export const name = 'motionworks-iec-use-skill';
+export const name = 'motionworks-iec-skill';
 export const inject = ['skills'];
 
 export function apply(ctx) {
@@ -21,7 +21,7 @@ export function apply(ctx) {
   if (process.platform !== 'win32') {
     try {
       ctx.logger?.info?.(
-        'motionworks-iec-use-skill: not loaded. The guidance covers MotionWorks IEC 3 Pro, which '
+        'motionworks-iec-skill: not loaded. The guidance covers MotionWorks IEC 3 Pro, which '
         + `is a Windows application, and this host is ${process.platform}.`,
       );
     } catch { /* a logger that refuses must not turn an unsupported host into a crash */ }
@@ -43,7 +43,7 @@ export function apply(ctx) {
   // synchronously during plugin apply", and "fiber disposal unregisters the
   // provider" - so the host already owns teardown.
   skills.register({
-    name: 'motionworks-iec-use',
+    name: 'motionworks-iec',
     description: 'Operate a running Yaskawa MotionWorks IEC 3 Pro IDE and edit its code — stage '
       + 'and open a project, read the live object model, read and rewrite POU Structured Text, '
       + 'add variable declarations, compile, and read the compiler verdict and error text. '
@@ -65,7 +65,7 @@ export function apply(ctx) {
     // outside node_modules.
     path: skillPath,
     source: 'custom',
-    provider: 'dsh-motionworks-iec-use',
+    provider: 'dsh-tool-motionworks-iec',
     invocation: { modelInvocable: true, userInvocable: true },
   });
 }

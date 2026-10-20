@@ -1,6 +1,6 @@
 {
-  "name": "dsh-motionworks-iec-use",
-  "version": "0.6.0",
+  "name": "dsh-tool-motionworks-iec",
+  "version": "0.7.0",
   "description": "Workspace-bound MotionWorks IEC editing, versioned programming references, static review and IDE verification for AryaAI DSH. The guidance skill and the Host tools load as separate bundle entries.",
   "keywords": [
     "dsh",
@@ -160,10 +160,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KonnectSuite/dsh-motionworks-iec-use.git"
+    "url": "git+https://github.com/KonnectSuite/dsh-tool-motionworks-iec.git"
   },
   "bugs": {
-    "url": "https://github.com/KonnectSuite/dsh-motionworks-iec-use/issues"
+    "url": "https://github.com/KonnectSuite/dsh-tool-motionworks-iec/issues"
   },
-  "homepage": "https://github.com/KonnectSuite/dsh-motionworks-iec-use#readme"
+  "homepage": "https://github.com/KonnectSuite/dsh-tool-motionworks-iec#readme"
 }

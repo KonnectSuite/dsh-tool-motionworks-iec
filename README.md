@@ -80,14 +80,14 @@ and registered tool contracts. Install the checkout through Arya's plugin manage
 which owns the profile dependency/lockfile:
 
 ```text
-plugin_manager install_bundle file:C:\path\to\dsh-motionworks-iec-use
+plugin_manager install_bundle file:C:\path\to\dsh-tool-motionworks-iec
 ```
 
 This is a **host plugin-manager operation**, not a PowerShell command. If your host
 exposes a graphical installer, select the same local bundle directory. Do not create
 manual junctions in the profile's `node_modules`. Restart the host after updates,
 connect the computer-use MCP separately, and confirm the `mw_ide_*` tools and
-`motionworks-iec-use` skill are available. This bundle does not automatically register
+`motionworks-iec` skill are available. This bundle does not automatically register
 a desktop-control server.
 
 ## Two bundle entries: tools and guidance
@@ -95,10 +95,10 @@ a desktop-control server.
 The bundle installs as two rows in the host's plugin list, and a profile can enable or
 disable either one:
 
-- `motionworks-iec-use` (`index.js`) registers the 61 `mw_*` tools and owns the COM
+- `motionworks-iec-tools` (`index.js`) registers the 61 `mw_*` tools and owns the COM
   bridge. Disabling it removes those tool schemas from every request, which is where
   most of this bundle's token cost sits.
-- `motionworks-iec-skill` (`skill.js`) registers the `motionworks-iec-use` guidance.
+- `motionworks-iec-skill` (`skill.js`) registers the `motionworks-iec` guidance.
   Disabling it removes the guidance and its line in the model's skill catalog while the
   tools keep working.
 
@@ -177,7 +177,7 @@ failures/recovery and actual coverage. These are dated evidence, not universal g
 | Empty diagnostics/cached Make | Require observed compilation; empty panes/old flags are not a PASS |
 | Trial dialog blocks startup | Use only the vendor-offered trial option; never bypass licensing |
 
-Use [GitHub Issues](https://github.com/KonnectSuite/dsh-motionworks-iec-use/issues)
+Use [GitHub Issues](https://github.com/KonnectSuite/dsh-tool-motionworks-iec/issues)
 for reproducible bugs. Include plugin commit/version, host/Windows/IDE versions,
 sanitized tool request/result, verifier phase and a minimal disposable reproduction.
 Review logs/screenshots/reports before sharing: remove customer code, IP addresses,
